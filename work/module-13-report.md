@@ -21,8 +21,8 @@
 }
 
 ## Configured Servers
-- hello-genai-tools
 - filesystem
+- hello-genai-tools
 
 ## MCP Tool Test
 - Tool used: echo

@@ -13,6 +13,10 @@
         "@modelcontextprotocol/server-filesystem",
         "C:\\Workspace\\hello-genai"
       ]
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
     }
   }
 }
