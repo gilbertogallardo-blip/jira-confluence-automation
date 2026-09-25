@@ -1,0 +1,10 @@
+{
+  "servers": {
+    "hello-genai-tools": {
+      "command": "python",
+      "args": [
+        "./mcp_server.py"
+      ]
+    }
+  }
+}

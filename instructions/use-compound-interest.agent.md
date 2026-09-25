@@ -1,12 +1,10 @@
-- Use this instruction when a task requires calculating compound interest for a principal amount over time.
-- Use `./tools/compound_interest.py` when the user provides principal, annual rate, compounds per year, and total years.
-- Run it from the project root with this pattern:
-  - `python tools/compound_interest.py 1000 5 4 2`
-- Arguments are in this order: principal, annual rate, compounds per year, years.
-- The script returns the final amount and the interest earned.
-- When presenting results, include:
-  - `Final Amount: ...`
-  - `Interest Earned: ...`
-- Use the output for financial analysis, planning, or reporting tasks.
-- If the input is invalid, stop and ask for numeric values instead of guessing.
-- Keep results brief and fact-based.
+- Compound interest is interest calculated on both the original principal and the accumulated interest from prior periods, which makes savings or investments grow faster over time.
+- Use this instruction for principal, annual rate, compounding frequency, and time-based growth calculations.
+- Example: `python tools/compound_interest.py 1000 5 12 10` for monthly compounding over 10 years.
+- Compare compounding frequencies by running the same values with different `compounds_per_year` inputs, such as 12 vs 1; more frequent compounding usually produces a higher final amount.
+- If the user provides invalid values, stop and ask for corrected numeric inputs instead of guessing.
+- Error example: `python tools/compound_interest.py 1000 -5 0 2` shows `Error: principal and annual rate must be non-negative, compounds per year must be positive, and years must be non-negative.`
+- Use `python tools/compound_interest.py --help` to see the command syntax and examples.
+- The arguments are: principal, annual rate, compounds per year, years.
+- Output values are rounded to 2 decimal places and should be displayed as `Final Amount: ...` and `Interest Earned: ...`.
+- Keep results brief, fact-based, and aligned with the real script output.
