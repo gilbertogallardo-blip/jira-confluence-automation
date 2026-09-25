@@ -1,4 +1,5 @@
 - Create process flow generation for current-state and target-state business steps.
+- Follow the shared project instruction standards in `./instructions/instruction-standards.agent.md` when creating or revising the flow guidance.
 - Input format:
   + Accept a normalized request object or structured markdown block containing at minimum: request ID, business objective, process name, module, actors, current-state summary, target-state summary, assumptions, constraints, and related systems.
   + When source data is extracted from Jira, normalize it into a consistent structure before generating the flow.

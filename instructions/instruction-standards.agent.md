@@ -1,0 +1,14 @@
+- Keep all project guidance in `./instructions/` as markdown files named `[verb]-[task].agent.md`.
+- Use short bullet points and keep every instruction focused on one workflow.
+- Prefer actionable, specific instructions over long explanations.
+- Keep file content in English unless the team explicitly requests another language for a specific workflow.
+- Maintain a single responsibility per instruction file: one workflow, one subject, one outcome.
+- Keep changes scoped to the task and follow the local project structure.
+- Use the project instruction catalog as the source of truth for discoverability.
+- Add new entries to `./instructions/main.agent.md` with a one-line description and relevant Keywords.
+- When updating an instruction, read the current file first and extend it incrementally instead of rewriting it wholesale.
+- Preserve useful existing content, especially proven steps, guardrails, and troubleshooting notes.
+- Use Markdown headings only when needed; otherwise keep the instruction as simple bullets.
+- If an instruction grows too large, split it into smaller files and reference them from the catalog.
+- When a workflow is shared across multiple instructions, extract the shared rules into a separate instruction and link both files to it.
+- Keep content concise, factual, and easy for future agents to apply consistently.
