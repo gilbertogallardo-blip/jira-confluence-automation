@@ -1,0 +1,21 @@
+- Use this instruction when a task requires calculating compound interest for a principal amount over time.
+- Use the helper script `./tools/compound_interest.py` when the user supplies principal, annual rate, compounds per year, and total years.
+- Invoke the script from the project root with command-line arguments in this order: principal, annual rate, compounds per year, years.
+- Example command:
+  - `python tools/compound_interest.py 1000 5 4 2`
+  - `python ./tools/compound_interest.py 2500 6.5 12 5`
+- The script calculates the final amount using the standard compound interest formula: `A = P(1 + r/n)^(nt)`.
+- Interpret the output as follows:
+  + `Final Amount` is the total value after the specified time period.
+  + `Interest Earned` is the difference between the final amount and the original principal.
+- When presenting results, include the input values and the computed output in a brief summary.
+- Example result format:
+  - `Principal: 1000`
+  - `Annual Rate: 5%`
+  - `Compounds per Year: 4`
+  - `Years: 2`
+  - `Final Amount: 1104.94`
+  - `Interest Earned: 104.94`
+- If the user provides invalid values, do not guess; report the issue and ask for valid numeric input.
+- Keep the response concise, factual, and suitable for direct use in documentation or task updates.
+- Prefer the script output directly when the user asks for a calculation, and only reformat for readability when needed.
