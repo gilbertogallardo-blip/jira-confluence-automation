@@ -11,19 +11,19 @@ This backlog translates the SAP functional specification automation concept into
 
 ## Phase 1: Setup
 
-- [ ] Confirm product goals, stakeholders, and success metrics for the functional specification generator
-- [ ] Define the MVP scope for the first release: approved Jira requests only, core SAP domain coverage, and review workflow (custom skill)
-- [ ] Identify target users and decision-makers: SAP Functional Lead, functional consultants, solution architects, business stakeholders, and testing leads (custom skill)
-- [ ] Document business rules and guardrails for data intake, approval gating, and missing-context escalation (custom skill)
-- [ ] Define the canonical internal data model for Jira requests and generated specifications (custom skill)
-- [ ] Define required fields for request intake: request ID, title, owner, status, approval status, dates, module, process, dependencies, related systems, and acceptance criteria
-- [ ] Define required fields for generated specifications: spec ID, related request ID, business objective, scope, process flow, requirements, data elements, integrations, test scenarios, risks, assumptions, review status, and approval status
-- [ ] Create a standard functional specification template aligned to SAP S/4HANA business documentation needs
-- [ ] Define mandatory sections required for spec completeness validation
-- [ ] Establish a naming convention and traceability model linking source Jira tickets to generated drafts
-- [ ] Set up repository structure and project conventions for code, configuration, templates, and test assets
-- [ ] Define the initial delivery milestone and release criteria for the MVP
-- [ ] Validate assumptions with stakeholders on approval workflow, required review roles, and data ownership
+- [ ] Confirm product goals, stakeholders, and success metrics for the functional specification generator (#1)
+- [ ] Define the MVP scope for the first release: approved Jira requests only, core SAP domain coverage, and review workflow (custom skill) (#2)
+- [ ] Identify target users and decision-makers: SAP Functional Lead, functional consultants, solution architects, business stakeholders, and testing leads (custom skill) (#3)
+- [ ] Document business rules and guardrails for data intake, approval gating, and missing-context escalation (custom skill) (#4)
+- [ ] Define the canonical internal data model for Jira requests and generated specifications (custom skill) (#5)
+- [ ] Define required fields for request intake: request ID, title, owner, status, approval status, dates, module, process, dependencies, related systems, and acceptance criteria (#6)
+- [ ] Define required fields for generated specifications: spec ID, related request ID, business objective, scope, process flow, requirements, data elements, integrations, test scenarios, risks, assumptions, review status, and approval status (#7)
+- [ ] Create a standard functional specification template aligned to SAP S/4HANA business documentation needs (#8)
+- [ ] Define mandatory sections required for spec completeness validation (#9)
+- [ ] Establish a naming convention and traceability model linking source Jira tickets to generated drafts (#10)
+- [ ] Set up repository structure and project conventions for code, configuration, templates, and test assets (#11)
+- [ ] Define the initial delivery milestone and release criteria for the MVP (#12)
+- [ ] Validate assumptions with stakeholders on approval workflow, required review roles, and data ownership (#13)
 
 ## Phase 2: Core Features
 
