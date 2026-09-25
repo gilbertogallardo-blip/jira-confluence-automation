@@ -15,3 +15,6 @@ Each entry below is an instruction file with a one-line description.
 
 - [./instructions/add-process-flow-generation.agent.md](./add-process-flow-generation.agent.md) — Generate current-state and target-state process flows from business request data.
   + Keywords: process flow, current state, target state, business steps, workflow
+
+- [./instructions/generate-quiz.agent.md](./generate-quiz.agent.md) — Generate quiz questions with exactly three answer options per question.
+  + Keywords: quiz, multiple choice, assessment, answer options, exam
