@@ -1,0 +1,14 @@
+- Use this instruction when a task requires measuring how complete a request or specification is against a required field list.
+- Use `./tools/calculate_completeness_score.py` for quick completeness scoring in a CLI workflow.
+- Run it from the project root with this pattern:
+  - `python tools/calculate_completeness_score.py "id,title,status,owner,impact" "id,title,status"`
+- The first argument is the full set of required fields separated by commas.
+- The second argument is the fields currently available or provided.
+- The script returns a percentage score plus the missing fields that still need context.
+- Present the result as:
+  - `Completeness Score: xx.xx%`
+  - `Present Fields: ...`
+  - `Missing Fields: ...`
+- Use this output to decide whether a record is ready for generation or needs review.
+- Do not invent missing fields; use only the values supplied by the user or source data.
+- Keep the result concise and suitable for Jira intake, review, or validation workflows.

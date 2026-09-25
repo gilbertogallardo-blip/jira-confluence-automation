@@ -1,0 +1,12 @@
+- Use this instruction when a task requires calculating compound interest for a principal amount over time.
+- Use `./tools/compound_interest.py` when the user provides principal, annual rate, compounds per year, and total years.
+- Run it from the project root with this pattern:
+  - `python tools/compound_interest.py 1000 5 4 2`
+- Arguments are in this order: principal, annual rate, compounds per year, years.
+- The script returns the final amount and the interest earned.
+- When presenting results, include:
+  - `Final Amount: ...`
+  - `Interest Earned: ...`
+- Use the output for financial analysis, planning, or reporting tasks.
+- If the input is invalid, stop and ask for numeric values instead of guessing.
+- Keep results brief and fact-based.

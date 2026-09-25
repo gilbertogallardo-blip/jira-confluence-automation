@@ -23,3 +23,12 @@ Battle-tested instructions are marked as such after validation in real project u
 
 - [./instructions/calculate-compound-interest.agent.md](./calculate-compound-interest.agent.md) — Calculate compound interest using the project helper script and CLI arguments. (new)
   + Keywords: compound interest, calculator, finance, principal, rate
+
+- [./instructions/use-compound-interest.agent.md](./use-compound-interest.agent.md) — Use the compound-interest helper for financial calculation tasks and CLI invocation.
+  + Keywords: compound interest, finance, calculator, CLI, principal
+
+- [./instructions/use-calculate-completeness-score.agent.md](./use-calculate-completeness-score.agent.md) — Assess specification or intake completeness using a required-field score.
+  + Keywords: completeness score, validation, missing fields, required fields, review
+
+- [./instructions/use-summarize-data-quality.agent.md](./use-summarize-data-quality.agent.md) — Summarize data quality stats for missing values and uncertain records before generation.
+  + Keywords: data quality, missing values, uncertainty, validation, intake

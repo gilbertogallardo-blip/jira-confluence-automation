@@ -1,0 +1,14 @@
+- Use this instruction when a task requires summarizing missing values, uncertainty flags, or overall data quality for a batch of Jira or intake records.
+- Use `./tools/summarize_data_quality.py` when the user has counts for total records, missing values, uncertain records, and required fields per record.
+- Run it from the project root with this pattern:
+  - `python tools/summarize_data_quality.py 100 12 5 8`
+- Arguments are in this order: total records, missing values, uncertain records, required fields per record.
+- The script calculates a quality score based on the ratio of bad or incomplete entries to total required checks.
+- Present the result as:
+  - `Total Records: ...`
+  - `Missing Values: ...`
+  - `Uncertain Records: ...`
+  - `Quality Score: ...%`
+- Use this output to flag data quality issues before generation or review.
+- Keep the guidance concise and suitable for intake validation, backlog triage, or data cleanup work.
+- Do not assume missing data is valid; flag it clearly instead of hiding it.
