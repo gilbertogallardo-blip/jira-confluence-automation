@@ -41,31 +41,31 @@ Items that should remain human-led include stakeholder alignment, product-scope 
 
 ### 2.1 Jira Intake and Data Normalization
 
-- [ ] Build a Jira connector or adapter for pulling approved requests, change requests, and GAP records (MCP: requires a Jira MCP server or custom Jira adapter)
-- [ ] Create authentication and permissions handling for Jira API access (MCP: external Jira integration)
-- [ ] Implement fetch logic for relevant issue fields: title, description, status, approval status, assignee, labels, dates, and related issue links (MCP)
-- [ ] Normalize Jira ticket data into a consistent internal request object (custom skill)
-- [ ] Add mapping rules for business owner, module, process, priority, dependencies, and impact type (custom skill)
-- [ ] Implement classification logic to group requests by SAP functional area and business process (custom skill)
-- [ ] Add validation for missing or incomplete required input fields (custom skill)
-- [ ] Flag request records that lack required context for review before generation (custom skill)
-- [ ] Support correlation between requests and related GAP records for traceability (custom skill)
-- [ ] Create a data quality report summarizing missing values, uncertainty flags, and intake exceptions (custom skill)
+- [ ] Build a Jira connector or adapter for pulling approved requests, change requests, and GAP records (MCP: requires a Jira MCP server or custom Jira adapter) [Approach 3]
+- [ ] Create authentication and permissions handling for Jira API access (MCP: external Jira integration) [Approach 3]
+- [ ] Implement fetch logic for relevant issue fields: title, description, status, approval status, assignee, labels, dates, and related issue links (MCP) [Approach 3]
+- [ ] Normalize Jira ticket data into a consistent internal request object (custom skill) [Approach 2]
+- [ ] Add mapping rules for business owner, module, process, priority, dependencies, and impact type (custom skill) [Approach 2]
+- [ ] Implement classification logic to group requests by SAP functional area and business process (custom skill) [Approach 2]
+- [ ] Add validation for missing or incomplete required input fields (custom skill) [Approach 2]
+- [ ] Flag request records that lack required context for review before generation (custom skill) [Approach 2]
+- [ ] Support correlation between requests and related GAP records for traceability (custom skill) [Approach 2]
+- [ ] Create a data quality report summarizing missing values, uncertainty flags, and intake exceptions (custom skill) [Approach 2]
 
 ### 2.2 Functional Spec Draft Generation
 
-- [ ] Implement a generation engine that creates a structured functional specification from normalized request data (custom skill)
-- [ ] Add a standard summary section with objective, background, and business justification (custom skill)
-- [ ] Add process flow generation for current-state and target-state business steps (custom skill)
-- [ ] Add detailed requirements section covering business rules, expected behavior, and constraints (custom skill)
-- [ ] Add data mapping section for impacted master data, transactional data, and required fields (custom skill)
-- [ ] Add integration dependency section covering interfaces, upstream/downstream systems, and cross-module touchpoints (custom skill)
-- [ ] Add test scenario generation for positive, negative, and edge-case validation (custom skill)
-- [ ] Add risk and assumptions section based on source data and known process dependencies (custom skill)
-- [ ] Add reviewer comments and approval fields to generated drafts (custom skill)
-- [ ] Implement versioning for generated draft revisions tied to Jira issue updates (MCP: Jira + review workflow)
-- [ ] Ensure each generated specification retains a traceability link to the originating Jira ticket (MCP)
-- [ ] Add support for generating multiple spec outputs from a single request if the request spans multiple domains or modules (custom skill)
+- [ ] Implement a generation engine that creates a structured functional specification from normalized request data (custom skill) [Approach 2]
+- [ ] Add a standard summary section with objective, background, and business justification (custom skill) [Approach 2]
+- [ ] Add process flow generation for current-state and target-state business steps (custom skill) [Approach 2]
+- [ ] Add detailed requirements section covering business rules, expected behavior, and constraints (custom skill) [Approach 2]
+- [ ] Add data mapping section for impacted master data, transactional data, and required fields (custom skill) [Approach 2]
+- [ ] Add integration dependency section covering interfaces, upstream/downstream systems, and cross-module touchpoints (custom skill) [Approach 2]
+- [ ] Add test scenario generation for positive, negative, and edge-case validation (custom skill) [Approach 2]
+- [ ] Add risk and assumptions section based on source data and known process dependencies (custom skill) [Approach 2]
+- [ ] Add reviewer comments and approval fields to generated drafts (custom skill) [Approach 2]
+- [ ] Implement versioning for generated draft revisions tied to Jira issue updates (MCP: Jira + review workflow) [Approach 3]
+- [ ] Ensure each generated specification retains a traceability link to the originating Jira ticket (MCP) [Approach 3]
+- [ ] Add support for generating multiple spec outputs from a single request if the request spans multiple domains or modules (custom skill) [Approach 2]
 
 ### 2.3 Completeness and Approval Checks
 
@@ -94,33 +94,33 @@ Items that should remain human-led include stakeholder alignment, product-scope 
 
 ## Phase 4: Testing
 
-- [ ] Define testing strategy for unit, integration, and workflow validation
-- [ ] Write unit tests for request parsing, normalization, and record validation
-- [ ] Write unit tests for functional spec generation for standard and edge-case request types
-- [ ] Write unit tests for completeness checks and validation rules
-- [ ] Write integration tests for Jira data ingestion and error handling
-- [ ] Write workflow tests covering draft creation, reviewer feedback, and final approval
-- [ ] Test scenarios for missing metadata, incomplete approvals, and high-impact domains
-- [ ] Validate generation quality against sample business requests and GAP records
-- [ ] Test special cases: multi-module requests, approval changes, and dependency-heavy workflows
-- [ ] Run end-to-end validation for a pilot SAP domain using representative sample tickets
-- [ ] Capture quality metrics such as completeness score, output consistency, and review turnaround time
-- [ ] Define acceptance criteria for passing a functional spec through review and approval
+- [ ] Define testing strategy for unit, integration, and workflow validation [Approach 2]
+- [ ] Write unit tests for request parsing, normalization, and record validation [Approach 2]
+- [ ] Write unit tests for functional spec generation for standard and edge-case request types [Approach 2]
+- [ ] Write unit tests for completeness checks and validation rules [Approach 2]
+- [ ] Write integration tests for Jira data ingestion and error handling [Approach 3]
+- [ ] Write workflow tests covering draft creation, reviewer feedback, and final approval [Approach 3]
+- [ ] Test scenarios for missing metadata, incomplete approvals, and high-impact domains [Approach 2]
+- [ ] Validate generation quality against sample business requests and GAP records [Approach 2]
+- [ ] Test special cases: multi-module requests, approval changes, and dependency-heavy workflows [Approach 2]
+- [ ] Run end-to-end validation for a pilot SAP domain using representative sample tickets [Approach 3]
+- [ ] Capture quality metrics such as completeness score, output consistency, and review turnaround time [Approach 2]
+- [ ] Define acceptance criteria for passing a functional spec through review and approval [Approach 1]
 
 ## Phase 5: Documentation
 
-- [ ] Write project overview and architecture documentation for the solution
-- [ ] Document the end-to-end workflow from Jira intake to final approved specification
-- [ ] Document the internal data model with field definitions, mappings, and validation rules
-- [ ] Create a user guide for SAP Functional Lead and functional reviewers
-- [ ] Define reviewer responsibilities and approval process steps
-- [ ] Document operational procedures for troubleshooting import failures, incomplete records, and blocked drafts
-- [ ] Add onboarding documentation for developers and maintainers
-- [ ] Document deployment and environment requirements
-- [ ] Include API/connector documentation for Jira and any downstream integration points
-- [ ] Add release notes and roadmap for MVP and future expansion phases
-- [ ] Capture lessons learned from pilot execution and identify improvements for scale-up
-- [ ] Finalize stakeholder-facing summary describing business value, risks, and implementation plan
+- [ ] Write project overview and architecture documentation for the solution [Approach 2]
+- [ ] Document the end-to-end workflow from Jira intake to final approved specification [Approach 2]
+- [ ] Document the internal data model with field definitions, mappings, and validation rules [Approach 2]
+- [ ] Create a user guide for SAP Functional Lead and functional reviewers [Approach 2]
+- [ ] Define reviewer responsibilities and approval process steps [Approach 1]
+- [ ] Document operational procedures for troubleshooting import failures, incomplete records, and blocked drafts [Approach 2]
+- [ ] Add onboarding documentation for developers and maintainers [Approach 2]
+- [ ] Document deployment and environment requirements [Approach 2]
+- [ ] Include API/connector documentation for Jira and any downstream integration points [Approach 2]
+- [ ] Add release notes and roadmap for MVP and future expansion phases [Approach 2]
+- [ ] Capture lessons learned from pilot execution and identify improvements for scale-up [Approach 2]
+- [ ] Finalize stakeholder-facing summary describing business value, risks, and implementation plan [Approach 1]
 
 ## Suggested MVP Prioritization
 
