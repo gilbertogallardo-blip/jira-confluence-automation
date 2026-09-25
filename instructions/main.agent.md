@@ -21,6 +21,9 @@ Battle-tested instructions are marked as such after validation in real project u
 - [./instructions/generate-quiz.agent.md](./generate-quiz.agent.md) — Generate quiz questions with exactly three answer options per question. (battle-tested)
   + Keywords: quiz, multiple choice, assessment, answer options, exam
 
+- [./instructions/validate-instructions.agent.md](./validate-instructions.agent.md) — Validate walkthrough files against summary/quiz and completeness rules. (new)
+  + Keywords: validation, walkthrough, summary, quiz, review
+
 - [./instructions/calculate-compound-interest.agent.md](./calculate-compound-interest.agent.md) — Calculate compound interest using the project helper script and CLI arguments. (new)
   + Keywords: compound interest, calculator, finance, principal, rate
 
