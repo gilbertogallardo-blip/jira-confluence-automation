@@ -25,6 +25,18 @@ This backlog translates the SAP functional specification automation concept into
 - [ ] Define the initial delivery milestone and release criteria for the MVP (#12)
 - [ ] Validate assumptions with stakeholders on approval workflow, required review roles, and data ownership (#13)
 
+## Module 19 GitHub Coding Agent Delegation Note
+
+The GitHub coding agent is best suited for backlog items that are implementation-focused, code-heavy, or documentation-intensive rather than stakeholder decision-making or cross-functional validation. Good candidates in this backlog include:
+
+- Phase 2: Jira intake and data normalization tasks related to parsing, validation, normalization, and reporting logic
+- Phase 2: functional specification generation tasks for summary sections, process flows, requirements, mappings, integrations, and test-scenario generation
+- Phase 2: completeness and approval checks for validation rules, warnings, workflow status tracking, and review logic
+- Phase 3: integration work for Jira payload handling, Confluence publishing flow, export options, and error-handling logic
+- Phase 4: unit tests, integration tests, workflow tests, and quality-metric validations
+
+Items that should remain human-led include stakeholder alignment, product-scope decisions, approval-gating assumptions, and review process ownership because they require domain judgment and coordination rather than direct coding automation.
+
 ## Phase 2: Core Features
 
 ### 2.1 Jira Intake and Data Normalization
