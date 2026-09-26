@@ -1,3 +1,12 @@
+# Module 15 Completion Report
+
+## Script Metadata
+- Filename: validate_walkthroughs.py
+- Language: Python
+- Purpose: Scans for walkthrough.md files under modules/ and validates each file for required Summary and Quiz sections, writing a Markdown report of the results.
+
+## Script Contents
+```python
 import argparse
 import re
 from pathlib import Path
@@ -94,3 +103,17 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
+
+## Parameters
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| --root | Repository root directory to scan for modules/ | . |
+| --output | Output path for the Markdown validation report | work/walkthrough-validation-results.md |
+
+## Test Run Output
+Validated 3 walkthrough file(s).
+- modules/module-01/subdir/walkthrough.md: Pass | No issues found
+- modules/module-02/walkthrough.md: Pass | No issues found
+- modules/module-03/walkthrough.md: Fail | Issues: Missing Summary section; Missing Quiz section
+Report written to work/walkthrough-validation-results.md
