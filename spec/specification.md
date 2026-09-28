@@ -675,15 +675,114 @@ The project must run effectively in a consistent local Docker environment and be
 
 ## 19. Open Questions
 
+The following questions were resolved by stakeholder review for a six-month delivery horizon.
+
 - Should Confluence updates be published automatically or require a manual approval step for every project?
+  - Decision: require manual approval for every Confluence publish in the prototype. Automation will generate a preview and capture reviewer decision before publish.
 - What Jira fields are mandatory for project-level sync mapping?
+  - Decision: minimum required fields are issue key, summary, status, issue type, assignee, labels, update timestamp, and project key.
 - Which page templates are required for the initial MVP?
+  - Decision: include a standard project status template and a release/update summary template only.
 - Will the product support multiple Jira projects and Confluence spaces from a single deployment?
+  - Decision: yes, one deployment may support multiple Jira projects and Confluence spaces, but only within a single tenant.
 - What are the required user roles for approval and administration?
+  - Decision: roles are admin, approver, and viewer. The prototype will not implement customizable role hierarchies.
 
 ---
 
-## 20. Appendix: MVP Scope
+## 20. Business Stakeholder Scope Decisions (6-Month Prototype)
+
+This section records the final business decisions made for the first implementation phase. The goal is to deliver a usable prototype within six months without introducing long-tail enterprise complexity.
+
+### 20.1 Authentication and access
+- Decision: implement local application authentication using email/password with JWT tokens for session management.
+- Rationale: this satisfies the proof-of-value within six months without requiring full enterprise SSO setup.
+- Out of scope: SSO/OIDC enterprise integration, IdP federation, SCIM provisioning, multi-tenant identity management.
+
+### 20.2 User roles
+- Decision: support three roles only: admin, approver, and viewer.
+- Admin can manage projects, templates, rules, and environment settings.
+- Approver can review and approve or reject generated Confluence content.
+- Viewer can view dashboards, execution logs, and project summaries.
+- Out of scope: custom role matrices, fine-grained permission trees, per-field authorization, audience-based access rules.
+
+### 20.3 Jira and Confluence support
+- Decision: support Jira Cloud and Confluence Cloud only in the prototype.
+- The backend will use the official Jira and Confluence REST APIs with personal access tokens or app-level credentials stored in environment variables.
+- Out of scope: Jira Server/Data Center, Confluence Server/Data Center, on-prem hosting, custom API gateway layers, and unsupported legacy versions.
+
+### 20.4 Trigger model
+- Decision: support two trigger modes in the prototype:
+  1. manual trigger from the UI or API
+  2. polling-based synchronization at a fixed interval, defaulting to every 5 minutes
+- Out of scope: webhook-based event processing and real-time event streaming.
+- Rationale: polling is faster to implement and more resilient for a six-month delivery timeline.
+
+### 20.5 Approval policy
+- Decision: all Confluence publishes require an approval step in the prototype.
+- Content must be generated as a preview and stored before final publication.
+- A user with approver privileges must explicitly approve or reject the update.
+- Out of scope: automatic publish policies, approval workflows by escalation chain, delegated approvals, and multi-step signoff flows.
+
+### 20.6 Sync behavior and deduplication
+- Decision: a sync execution is deduplicated using the combination of project id, issue key, template id, and content hash for the same issue status snapshot.
+- If a duplicate event is received within the same validation window, the second request will be rejected or marked as duplicate without creating a second publish.
+- Out of scope: advanced event correlation across multiple systems, cross-project duplicate detection, and event-sourcing models.
+
+### 20.7 Data retention
+- Decision: maintain execution logs, approvals, and template versions for 180 days in the prototype.
+- After 180 days, the application will delete or archive old execution records according to a simple retention job.
+- Out of scope: long-term enterprise retention policies, legal hold workflows, and configurable archive pipelines.
+
+### 20.8 Database migration strategy
+- Decision: use SQL migration files tracked in the repository with a simple version-based migration runner.
+- All schema and seed changes must be validated in local Docker-based PostgreSQL before release.
+- Out of scope: automated zero-downtime migration orchestration and advanced schema comparison tooling.
+
+### 20.9 Deployment and environment model
+- Decision: the prototype will support local Docker-based development and testing only.
+- Production deployment is out of scope for this project phase.
+- Out of scope: Kubernetes, managed cloud hosting, blue/green deployment orchestration, autoscaling, and production observability platforms.
+
+### 20.10 UI behavior
+- Decision: implement the following screens in the prototype:
+  - dashboard
+  - project setup
+  - sync rule builder
+  - preview/review screen
+  - execution history
+  - monitoring and alerts
+- Out of scope: advanced drag-and-drop editors, visual workflow builders, rich WYSIWYG editing, analytics dashboards, and custom layout themes.
+
+### 20.11 Error handling and monitoring
+- Decision: implement structured backend error responses, execution status tracking, retry logic for transient failures, and a simple monitoring dashboard.
+- Retry behavior will be capped at three attempts for transient failures.
+- Out of scope: enterprise alerting integrations, paging systems, SRE runbooks, and complex ML-based anomaly detection.
+
+### 20.12 Security and secrets
+- Decision: the backend will own all connection credentials and secrets, stored in environment variables or a local secret manager.
+- No frontend component will ever receive Jira or Confluence credentials directly.
+- Out of scope: advanced secret rotation automation, vault integration, hardware-backed key management, and zero-trust network segmentation.
+
+### 20.13 Scope boundaries for product shape
+- Decision: the product is a single-tenant platform intended for one organization with multiple Jira projects and Confluence spaces.
+- It is a workflow automation and documentation synchronization tool, not a full enterprise content authoring platform.
+- Out of scope: multi-tenant SaaS operation, external partner onboarding, and unrelated business-process automation.
+
+### 20.14 High-risk or long-tail capabilities
+The following items are explicitly out of scope for the six-month prototype because they are high-complexity or enterprise-only needs:
+- full SSO and enterprise identity federation
+- Jira Server/Data Center support
+- webhook/event-driven architecture as the primary sync mechanism
+- multi-tenant deployment model
+- production-grade failover, disaster recovery, and backup automation
+- advanced approval hierarchies and delegated review workflows
+- AI-assisted page generation or semantic content analysis
+- enterprise observability and alert integration
+
+---
+
+## 21. Appendix: MVP Scope
 
 The initial MVP should include:
 - project setup and configuration
